@@ -1,6 +1,8 @@
 # config.txt - Config file for Python game-of-life implementation.
 # First line: [rows] [columns]
-# Each line after: every space is represented with a 0 or a 1
-2 2
-10
-01
+# Each line after: a dead cell is a 0, a live cell is any other character
+4 3
+100
+011
+111
+000
