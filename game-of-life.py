@@ -113,6 +113,8 @@ while curGen < numGens:
             sys.stdout.flush()
         sys.stdout.write("\n")
         sys.stdout.flush()
+    if continuousFlag is False:
+        raw_input()
     # Copy this generation's board into a temporary new board.
     nextGenBoard = [[0]*numCols for _ in range(numRows)]
     curRow = 0
