@@ -108,6 +108,8 @@ for line in config:
                 numCols = int(splitLine[1])
             except ValueError:
                 sys.exit("Error: number of columns must be a number.")
+            except IndexError:
+                sys.exit("Error: number of columns is missing in the config file.")
             if numRows < 3 or numCols < 3:
                 sys.exit("Grid must be at least 3x3 in size.")
             firstLine = False
