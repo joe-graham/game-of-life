@@ -1,0 +1,14 @@
+# config.txt - Config file for Python game-of-life implementation.
+# First line: [rows] [columns]
+# Each line after: every space is represented with a 0 or a 1
+10 10
+0000000000
+0000000000
+0000000000
+0000000000
+0000100000
+0001110000
+0001010000
+0000100000
+0000000000
+0000000000
