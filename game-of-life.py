@@ -150,4 +150,4 @@ while curGen < numGens:
     # Sleep for a second in between generations, so it's possible to see what's
     # going on, only if the continuous flag is set.
     if continuousFlag:
-        time.sleep(1)
+        time.sleep(0.5)
