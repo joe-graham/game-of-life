@@ -121,9 +121,15 @@ for line in config:
         # board is initialized dead.
         else:
             for char in line.rstrip():
+                if curCol == numCols:
+                    sys.exit("Line " + str(curRow+1) + " is too long.")
+                if curRow == numRows:
+                    sys.exit("Too many rows in the config file.")
                 if str(char) != "0":
                     gameBoard[curRow][curCol] = 1
                 curCol += 1
+            if curCol < numCols:
+                sys.exit("Line " + str(curRow+1) + " is too short.")
             curRow += 1
             curCol = 0
 curGen = 0
