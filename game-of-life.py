@@ -33,8 +33,9 @@ for line in config:
         # Initialize the board if this is the first line of the file.
         if firstLine:
             #TODO: try catch to make sure that what we're getting is an int
-            numRows = int(line[0])
-            numCols = int(line[2])
+            splitLine = line.split()
+            numRows = int(splitLine[0])
+            numCols = int(splitLine[1])
             if numRows < 3 or numCols < 3:
                 sys.exit("Grid must be at least 3x3 in size.")
             firstLine = False
