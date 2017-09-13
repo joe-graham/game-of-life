@@ -1,7 +1,7 @@
 # game-of-life.py - An implementation of Conway's Game of Life in Python.
 # Joe Graham - 9/11/17
 
-import argparse, io, sys
+import argparse, io, sys, os, platform, time
 
 # Parse in config filename, number of generations, and whether or not to pause
 # between generations from the command line. argparse will auto stop if not
@@ -106,6 +106,12 @@ def validateSpace(validRow, validCol):
 curGen = 0
 # Run the simulation only for the number of generations specified.
 while curGen < numGens:
+    # Clear out the previous generation's screen. Different OSes have different
+    # clear commands.
+    if platform.system() == "Windows":
+        os.system('cls')
+    else:
+        os.system('clear')
     # Print out this generation's board.
     for row in gameBoard:
         for cell in row:
@@ -140,3 +146,7 @@ while curGen < numGens:
     # Make the nextGenBoard the current gameBoard.
     gameBoard = nextGenBoard
     curGen += 1
+    # Sleep for a second in between generations, so it's possible to see what's
+    # going on, only if the continuous flag is set.
+    if continuousFlag:
+        time.sleep(1)
